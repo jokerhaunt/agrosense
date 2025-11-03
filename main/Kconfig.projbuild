@@ -1,0 +1,43 @@
+menu "AgroSense Configuration"
+
+    config WIFI_SSID
+        string "Wi-Fi SSID"
+        default "your_ssid"
+
+    config WIFI_PASSWORD
+        string "Wi-Fi Password"
+        default "your_password"
+
+    config MQTT_BROKER_URI
+        string "MQTT Broker URI"
+        default "mqtt://192.168.1.100:1883"
+
+    config DEVICE_ID
+        string "Device ID"
+        default "agrosense_01"
+
+    config FW_VERSION
+        string "Firmware version"
+        default "1.0.0"
+
+    config SLEEP_NORMAL_MIN
+        int "Normal sleep interval (minutes)"
+        default 60
+        range 1 360
+
+    config SLEEP_RETRY_MIN
+        int "Retry sleep interval (minutes)"
+        default 10
+        range 1 60
+
+    config STORAGE_MAX_PACKETS
+        int "Max stored packets in NVS (store-and-forward)"
+        default 24
+        range 1 48
+
+    config WIFI_MAX_RETRIES
+        int "Wi-Fi max connection retries"
+        default 5
+        range 1 10
+
+endmenu
